@@ -1,0 +1,50 @@
+$main_color: rgb(91 33 182);
+$middle_color: rgb(124 58 237);
+$light_color: rgb(196 181 253);
+$main_bg: #e2e8f0;
+
+.custom-select {
+    &__control {
+        background-color: transparent !important;
+        border: 1px solid $main_color !important;
+        border-radius: 10px !important;
+        border-bottom: 1px solid rgb(91 33 182) !important;
+        box-shadow: none !important;
+        cursor: pointer !important;
+
+        &--menu-is-open {
+            border-color: $main_color !important;
+            cursor: pointer !important;
+        }
+    }
+
+    &__value-container {
+        cursor: pointer !important;
+    }
+
+    &__indicators {
+        cursor: pointer !important;
+    }
+
+    &__indicator {
+        color: $middle_color !important;
+
+        &:hover {
+            color: $main_color !important;
+        }
+    }
+
+    &__menu {
+        background-color: $main_bg !important;
+        color: $main_color !important;
+    }
+
+    &__option {
+        cursor: pointer !important;
+        color: $main_color !important;
+        background-color: $main_bg !important;
+        &--is-focused {
+            background-color: $light_color !important;
+        }
+    }
+}

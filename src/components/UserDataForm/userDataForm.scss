@@ -1,0 +1,123 @@
+.form {
+    &-total {
+        &__item {
+            &--delivery {
+                @apply text-rose-900 font-medium block w-full mb-2;
+            }
+
+            &--payment {
+                @apply text-lg;
+            }
+        }
+    }
+
+    &-field {
+        @apply mb-4 w-full;
+
+        label {
+            display: block;
+            @apply mb-1;
+        }
+
+        &--group {
+            @apply mb-4;
+
+            .form {
+                &-field {
+                    @apply mb-0;
+                }
+            }
+        }
+
+        &--fieldset {
+            @apply mb-4 w-full;
+
+            .form {
+                &-field {
+                    &,
+                    &--group {
+                        @apply mb-0;
+                    }
+                }
+            }
+        }
+
+        &--checkbox {
+            @apply flex items-center;
+
+            label {
+                @apply mb-0;
+            }
+        }
+
+        &--text,
+        &--tel {
+            input {
+                @apply mb-2 p-3 border rounded-lg focus:outline-violet-300 w-full;
+            }
+            .error {
+                border-bottom: 2px solid #dc2626;
+                }
+            }
+
+
+        &--with-btn {
+            @apply flex flex-wrap items-center;
+
+            label {
+                @apply w-full;
+            }
+
+            input {
+                @apply w-3/4 mb-0;
+            }
+        }
+
+        &--radio {
+            label {
+                position: relative;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                    width: 15px;
+                    height: 15px;
+                    @apply border inline-flex border-purple-600 rounded-full mr-2;
+                }
+
+                &::after {
+                    content: "";
+                    width: 9px;
+                    height: 9px;
+                    left: 3px;
+                    top: 6px;
+                    opacity: 0;
+                    transition: opacity 0.2s;
+                    @apply absolute inline-flex bg-purple-600 rounded-full mr-2;
+                }
+            }
+
+            input {
+                appearance: none;
+                position: absolute;
+                visibility: hidden;
+                opacity: 0;
+                z-index: -1;
+
+                &:checked ~ label::after {
+                    opacity: 1;
+                    transition: opacity 0.2s;
+                }
+            }
+        }
+    }
+}
+.submit-btn {
+    @apply ml-6 rounded-full border bg-purple-200 text-violet-800 font-medium px-6 py-2 hover:bg-indigo-500 hover:text-white flex-auto;
+}
+
+.pay-btn {
+    @apply mt-4 rounded-full border text-violet-800 font-medium px-6 py-2 hover:bg-indigo-500 hover:text-white;
+}
