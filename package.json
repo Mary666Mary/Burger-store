@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "homepage": "/products",
   "scripts": {
     "start": "cross-env TAILWIND_MODE=watch webpack serve --hot",
     "build": "cross-env NODE_ENV=production webpack"
